@@ -1,4 +1,5 @@
 import heapq
+import pygame
 
 def heuristic(a, b):
     return abs(a[0] - b[0]) + abs(a[1] - b[1])
@@ -67,6 +68,6 @@ path = astar(start, goal, obstacles)
 
 # Print the path
 if path:
-    print("Path found:", path)
+    print("Fastest Path Found:", path)
 else:
-    print("No path found")
+    print("No Path")
