@@ -8,7 +8,7 @@ red = (250, 145, 152)
 white = (255, 255, 255)
 grey = (156, 156, 156)
 
-window_size = (900, 900)
+window_size = (600, 600)
 square_size = 30
 num_rows = 20
 num_cols = 20
@@ -42,10 +42,10 @@ while True:
 
     screen.fill(white)
 
-
     for row in range(num_rows):
         for col in range(num_cols):
-            rect = pygame.Rect(col * square_size, row * square_size, square_size, square_size)
+            rect = pygame.Rect(col * square_size, row *
+                               square_size, square_size, square_size)
             pygame.draw.rect(screen, grid[row][col], rect)
 
     pygame.display.update()
