@@ -52,13 +52,6 @@ while True:
                                 if grid[i][j] == green:
                                     grid[i][j] = white
                     grid[row][col] = green
-                else:
-                    if grid[row][col] != white:
-                        for i in range(num_rows):
-                            for j in range(num_cols):
-                                if grid[i][j] == grey:
-                                    grid[i][j] = white
-                    grid[row][col] = grey
 
         if pygame.mouse.get_pressed()[2]:
             mouse_pos = pygame.mouse.get_pos()
