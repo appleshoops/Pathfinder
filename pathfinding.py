@@ -38,21 +38,11 @@ while True:
          col = mouse_pos[0] // square_size
          grid[row][col] = grey
         
-        if pygame.mouse.get_pressed()[0]:
+        if pressed [pygame.K_LSHIFT]:
             mouse_pos = pygame.mouse.get_pos()
-            if mouse_pos[1] <= 30:
-                draw_green = not draw_green
-            else:
-                row = mouse_pos[1] // square_size
-                col = mouse_pos[0] // square_size
-                if draw_green:
-                    if grid[row][col] != white:
-                        for i in range(num_rows):
-                            for j in range(num_cols):
-                                if grid[i][j] == green:
-                                    grid[i][j] = white
-                    grid[row][col] = green
-
+            row = mouse_pos[1] // square_size
+            col = mouse_pos[0] // square_size
+            grid[row][col] = green
         if pygame.mouse.get_pressed()[2]:
             mouse_pos = pygame.mouse.get_pos()
             row = mouse_pos[1] // square_size
