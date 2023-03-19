@@ -32,18 +32,23 @@ while True:
             pygame.quit()
 
         pressed = pygame.key.get_pressed()
-        if pressed [pygame.K_TAB]:
+        if pressed [pygame.K_LSHIFT]:
          mouse_pos = pygame.mouse.get_pos()
          row = mouse_pos[1] // square_size
          col = mouse_pos[0] // square_size
          grid[row][col] = grey
         
-        if pressed [pygame.K_LSHIFT]:
+        if pressed [pygame.K_z]:
             mouse_pos = pygame.mouse.get_pos()
             row = mouse_pos[1] // square_size
             col = mouse_pos[0] // square_size
             grid[row][col] = green
-        if pygame.mouse.get_pressed()[2]:
+            for i in range(num_rows):
+                for j in range(num_cols):
+                    if i != row or j != col:
+                        if grid[i][j] == green:
+                            grid[i][j] = white
+        if pressed [pygame.K_x]:
             mouse_pos = pygame.mouse.get_pos()
             row = mouse_pos[1] // square_size
             col = mouse_pos[0] // square_size
@@ -53,6 +58,18 @@ while True:
                     if i != row or j != col:
                         if grid[i][j] == red:
                             grid[i][j] = white
+                            
+        if pressed [pygame.K_c]:
+           mouse_pos = pygame.mouse.get_pos()
+           row = mouse_pos[1] // square_size
+           col = mouse_pos[0] // square_size
+           grid[row][col] = white
+           for i in range(num_rows):
+               for j in range(num_cols):
+                   if i != row or j != col:
+                       if grid[i][j] == white:
+                           grid[i][j] = white
+           
                             
     screen.fill(white)
 
