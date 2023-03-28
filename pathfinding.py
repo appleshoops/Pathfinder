@@ -3,7 +3,9 @@ import math
 from queue import PriorityQueue
 import heapq
 from pygame.locals import *
-
+import pathfinding
+from pathfinding.core.diagonal_movement import DiagonalMovement
+from pathfinding.finder.a_star import AStarFinder
 
 pygame.init()
 
@@ -17,6 +19,8 @@ square_size = 30
 num_rows = 20
 num_cols = 20
 grid = [[(white) for j in range(num_cols)]for i in range(num_rows)]
+
+
 
 
 screen = pygame.display.set_mode(window_size)
@@ -74,8 +78,7 @@ while True:
 
     for row in range(num_rows):
         for col in range(num_cols):
-            rect = pygame.Rect(col * square_size, row *
-                               square_size, square_size, square_size)
+            rect = pygame.Rect(col * square_size, row * square_size, square_size, square_size)
             pygame.draw.rect(screen, grid[row][col], rect)
 
     pygame.display.update()
