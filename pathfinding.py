@@ -6,6 +6,7 @@ from pygame.locals import *
 import pathfinding
 from pathfinding.core.diagonal_movement import DiagonalMovement
 from pathfinding.finder.a_star import AStarFinder
+from pathfinding.core.grid import Grid
 
 pygame.init()
 
