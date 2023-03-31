@@ -3,9 +3,6 @@ import math
 from queue import PriorityQueue
 import heapq
 from pygame.locals import *
-from pathfinding.core.diagonal_movement import DiagonalMovement
-from pathfinding.core.grid import Grid
-from pathfinding.finder.a_star import AStarFinder
 
 pygame.init()
 
@@ -28,7 +25,6 @@ while True:
     grid = Grid(matrix=cellGrid)
     start = startPos
     end = endPos
-    
 
     for event in pygame.event.get():
         if event.type == QUIT:
@@ -79,7 +75,8 @@ while True:
 
     for row in range(num_rows):
         for col in range(num_cols):
-            rect = pygame.Rect(col * square_size, row * square_size, square_size, square_size)
+            rect = pygame.Rect(col * square_size, row *
+                               square_size, square_size, square_size)
             pygame.draw.rect(screen, cellGrid[row][col], rect)
 
     pygame.display.update()
