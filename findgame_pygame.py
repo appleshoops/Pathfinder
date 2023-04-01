@@ -1,28 +1,24 @@
-import pygame as pg
-from random import random
-from collections import deque
+from tkinter import messagebox, Tk
+import pygame
+import sys
 
-green = (163, 247, 180)
-red = (250, 145, 152)
-white = (255, 255, 255)
-grey = (156, 156, 156)
+width = 500
+height = 500
 
-def get_rect(x, y):
-    return x * Tile + 1, y * Tile + 1, Tile - 2, Tile - 2
-cols, rows = 30, 30
-Tile = 60
+window = pygame.display.set_mode((width, height))
+pygame.display.set_caption("Pathfinding App")
 
-pg.init()
-sc = pg.display.set_mode([cols * Tile, rows * Tile])
-clock = pg.time.Clock()
+def main():
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
 
-grid = [[1 if random() < 0.2 else 0 for col in range(cols)] for row in range(rows)]
+        window.fill('grey22')
 
-while True:
-    sc.fill(pg.color.Color('black'))
+        pygame.display.flip()
 
-    
+main()
 
-    [exit() for event in pg.event.get() if event.type == pg.QUIT]
-    pg.display.flip()
-    clock.tick(7)
+pygame.display.update()
