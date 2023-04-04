@@ -6,6 +6,7 @@ width = 600
 height = 600
 
 window = pygame.display.set_mode((width, height))
+pygame.display.set_caption("Python Pathfinder AI")
 
 columns = 30
 rows = 30
@@ -71,6 +72,7 @@ def main():
     end_square = None
 
     while True:
+        pressed = pygame.key.get_pressed()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -89,7 +91,7 @@ def main():
                     end_square_set = True
                     end_square.end = True
 
-            if [pygame.K_TAB] and end_square_set:
+            if pressed[pygame.K_TAB] and end_square_set:
                 begin_search = True
         if begin_search:
             if len(queue) and searching:
