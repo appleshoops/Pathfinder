@@ -58,7 +58,7 @@ for i in range(columns):
     for j in range(rows):
         grid[i][j].add_neighbors()
 
-start_square = grid[0][0]
+start_square = grid[15][15]
 start_square.start = True
 start_square.visited = True
 queue.append(start_square)
